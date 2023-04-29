@@ -1,0 +1,23 @@
+{
+  "name": "Aprender Gratis - Extension",
+  "description": "Scrapping extension for the 'Aprender Gratis' platform",
+  "manifest_version": 3,
+  "version": "0.1.0",
+  "permissions": ["activeTab", "scripting", "tabs"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://aprendergratis.es/*"],
+      "js": ["./contentscript.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "./popup/index.html"
+  },
+  "icons": {
+    "32": "./images/icon.png",
+    "128": "./images/icon.png"
+  }
+}
